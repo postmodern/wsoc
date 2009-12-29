@@ -43,7 +43,7 @@ module WSOC
     end
 
     get '/specs.json' do
-      json Specs.map(self.host,self.port)
+      json Specs.map(request.host,request.port)
     end
 
   end
