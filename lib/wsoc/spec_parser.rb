@@ -19,11 +19,16 @@
 #
 
 require 'wsoc/extensions/uri'
+require 'wsoc/specs'
 
 require 'nokogiri'
 
 module WSOC
-  module CourseParser
+  module SpecParser
+    def self.extended(base)
+      Dir[base.course,'**','*.html'].each { |page| parse_page(page) }
+    end
+
     def link_to_spec(path,link)
       relative_path = (link.get_attribute('href') || '')
       absolute_path = URI.expand_path(File.join('',path,relative_path))
@@ -56,10 +61,6 @@ module WSOC
       end
 
       return specs
-    end
-
-    def parse_course
-      Dir[self.course,'**','*.html'].each { |page| parse_page(page) }
     end
   end
 end
