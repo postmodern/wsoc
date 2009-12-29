@@ -18,14 +18,19 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+require 'wsoc/specs'
+require 'wsoc/course_parser'
 require 'wsoc/helpers'
 require 'wsoc/version'
 
 require 'rubygems'
 require 'sinatra'
+require 'nokogiri'
 
 module WSOC
   class App < Sinatra::Base
+
+    extend CourseParser
 
     set :root, File.expand_path(File.join(File.dirname(__FILE__),'..','..'))
     set :course, File.join(self.public,'course')
@@ -35,6 +40,10 @@ module WSOC
 
     get '/' do
       show :welcome
+    end
+
+    get '/specs.json' do
+      json Specs.map(self.host,self.port)
     end
 
   end
