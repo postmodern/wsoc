@@ -1,5 +1,3 @@
-function fail() { window.location = "/fail"; }
-
 function getSpecs()
 {
   $.getJSON("/specs.json",function(specs) {
