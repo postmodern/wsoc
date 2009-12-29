@@ -1,7 +1,7 @@
 function getSpecs()
 {
   $.getJSON("/specs.json",function(specs) {
-    $("body").append("<a href='#' class='specs show_specs'>Show Specs</a><a href='#' class='specs hide_specs'>Hide Specs</a><ul id='specs'></ul>");
+    $("#content").append("<a href='#' class='specs show_specs'>Show Specs</a><a href='#' class='specs hide_specs'>Hide Specs</a><ul id='specs'></ul>");
 
     var spec_list = $("#specs");
 
