@@ -5,4 +5,8 @@ README.rdoc
 Rakefile
 bin/wsoc
 lib/wsoc.rb
+lib/wsoc/helpers.rb
+lib/wsoc/helpers/rendering.rb
+lib/wsoc/app.rb
+lib/wsoc/runner.rb
 lib/wsoc/version.rb
