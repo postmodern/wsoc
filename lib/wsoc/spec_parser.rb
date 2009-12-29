@@ -27,14 +27,15 @@ module WSOC
   module SpecParser
     def self.included(base)
       base.module_eval do
-        def self.link_to_spec(path,link)
+        def self.link_to_spec(path,link,behavior)
           relative_path = (link.get_attribute('href') || '')
           absolute_path = URI.expand_path(File.join('',path,relative_path))
 
           return {
-            :message => link.inner_text,
+            :behavior => behavior.to_sym,
             :link => relative_path,
             :url => absolute_path,
+            :message => link.inner_text,
             :example => link.to_html
           }
         end
@@ -43,19 +44,19 @@ module WSOC
           doc = Nokogiri::HTML(open(path))
 
           doc.search('.follow//a').each do |follow|
-            Specs << link_to_spec(path,follow).merge(:behavior => :follow)
+            Specs << link_to_spec(path,follow,:follow)
           end
 
           doc.search('.nofollow//a').each do |nofollow|
-            Specs << link_to_spec(path,nofollow).merge(:behavior => :nofollow)
+            Specs << link_to_spec(path,nofollow,:nofollow)
           end
 
           doc.search('.ignore//a').each do |ignore|
-            Specs << link_to_spec(path,ignore).merge(:behavior => :ignore)
+            Specs << link_to_spec(path,ignore,:ignore)
           end
 
           doc.search('.fail//a').each do |failed|
-            Specs << link_to_spec(path,failed).merge(:behavior => :fail)
+            Specs << link_to_spec(path,failed,:fail)
           end
         end
 
