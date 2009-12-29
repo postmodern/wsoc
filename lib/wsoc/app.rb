@@ -33,7 +33,7 @@ module WSOC
     helpers WSOC::Helpers
 
     get '/' do
-      show :start
+      show :welcome
     end
 
   end

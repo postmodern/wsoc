@@ -1,0 +1,25 @@
+body {
+	padding: 1em;
+	color: black;
+	background-color: white;
+	font-size: 90%;
+	font-family: Arial;
+}
+
+#banner {
+	bottom-border: 1px solid gray;
+}
+
+#banner h1 {
+	right-border: 1px solid gray;
+}
+
+#content {
+	padding: 1em;
+}
+
+#footer {
+	color: gray;
+	width: 100%;
+	text-align: center;
+}
