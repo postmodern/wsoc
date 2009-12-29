@@ -19,7 +19,7 @@
 #
 
 require 'wsoc/specs'
-require 'wsoc/course_parser'
+require 'wsoc/spec_parser'
 require 'wsoc/helpers'
 require 'wsoc/version'
 
@@ -30,11 +30,11 @@ require 'nokogiri'
 module WSOC
   class App < Sinatra::Base
 
-    extend CourseParser
-
     set :root, File.expand_path(File.join(File.dirname(__FILE__),'..','..'))
     set :course, File.join(self.public,'course')
     enable :static, :sessions
+
+    extend SpecParser
 
     helpers WSOC::Helpers
 
