@@ -34,7 +34,7 @@ module WSOC
     set :course, File.join(self.public,'course')
     enable :static, :sessions
 
-    extend SpecParser
+    include SpecParser
 
     helpers WSOC::Helpers
 
