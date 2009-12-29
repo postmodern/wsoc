@@ -22,19 +22,29 @@ require 'uri'
 
 module WSOC
   module Specs
-    def Specs.behaviors
-      @@wsoc_specs_behaviors ||= []
+    def Specs.all
+      @@wsoc_specs_all ||= []
     end
 
-    def Specs.add(path,options={})
-      Specs.behaviors << options.merge(:link => URI.expand_path(path))
+    def Specs.<<(spec)
+      Specs.all << spec
     end
 
     def Specs.map(host,port=nil)
-      url = URI::HTTP.build(:host => host, :port => port)
+      Specs.all.map do |spec|
+        link = URI::HTTP.build(
+          :host => host,
+          :port => port,
+          :path => spec[:link]
+        ).to_s
 
-      return Specs.behaviors.map do |behavior|
-        behavior.merge(:link => url.merge(behavior))
+        url = URI::HTTP.build(
+          :host => host,
+          :port => port,
+          :path => spec[:url]
+        ).to_s
+
+        spec.merge(:link => link, :url => url)
       end
     end
   end
