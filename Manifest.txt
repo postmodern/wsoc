@@ -3,6 +3,7 @@ History.rdoc
 Manifest.txt
 README.rdoc
 Rakefile
+config.ru
 bin/wsoc
 lib/wsoc.rb
 lib/wsoc/helpers.rb
