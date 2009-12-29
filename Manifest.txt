@@ -1,0 +1,8 @@
+COPYING.txt
+History.rdoc
+Manifest.txt
+README.rdoc
+Rakefile
+bin/wsoc
+lib/wsoc.rb
+lib/wsoc/version.rb
