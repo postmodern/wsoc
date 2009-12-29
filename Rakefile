@@ -11,6 +11,7 @@ Hoe.spec('wsoc') do
   self.history_file = 'History.rdoc'
 
   self.extra_deps = [
+    ['json', '>=1.2.0'],
     ['sinatra', '>=0.9.4']
   ]
 end
