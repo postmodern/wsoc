@@ -25,42 +25,44 @@ require 'nokogiri'
 
 module WSOC
   module SpecParser
-    def self.extended(base)
-      Dir[base.course,'**','*.html'].each { |page| parse_page(page) }
-    end
+    def self.included(base)
+      base.module_eval do
+        def self.link_to_spec(path,link)
+          relative_path = (link.get_attribute('href') || '')
+          absolute_path = URI.expand_path(File.join('',path,relative_path))
 
-    def link_to_spec(path,link)
-      relative_path = (link.get_attribute('href') || '')
-      absolute_path = URI.expand_path(File.join('',path,relative_path))
+          return {
+            :message => link.inner_text,
+            :link => relative_path,
+            :url => absolute_path,
+            :example => link.to_html
+          }
+        end
 
-      return {
-        :message => link.inner_text,
-        :link => relative_path,
-        :url => absolute_path,
-        :example => link.to_html
-      }
-    end
+        def self.parse_page(path)
+          doc = Nokogiri::HTML(open(path))
 
-    def parse_page(path)
-      doc = Nokogiri::HTML(open(page))
+          doc.search('.follow//a').each do |follow|
+            Specs << link_to_spec(path,follow).merge(:behavior => :follow)
+          end
 
-      doc.search('.follow//a').each do |follow|
-        Specs << link_to_spec(path,follow).merge(:behavior => :follow)
+          doc.search('.nofollow//a').each do |nofollow|
+            Specs << link_to_spec(path,nofollow).merge(:behavior => :nofollow)
+          end
+
+          doc.search('.ignore//a').each do |ignore|
+            Specs << link_to_spec(path,ignore).merge(:behavior => :ignore)
+          end
+
+          doc.search('.fail//a').each do |failed|
+            Specs << link_to_spec(path,failed).merge(:behavior => :fail)
+          end
+        end
+
+        Dir[File.join(self.course,'**','*.html')].each do |page|
+          self.parse_page(page)
+        end
       end
-
-      doc.search('.nofollow//a').each do |nofollow|
-        Specs << link_to_spec(path,nofollow).merge(:behavior => :nofollow)
-      end
-
-      doc.search('.ignore//a').each do |ignore|
-        Specs << link_to_spec(path,ignore).merge(:behavior => :ignore)
-      end
-
-      doc.search('.fail//a').each do |failed|
-        Specs << link_to_spec(path,failed).merge(:behavior => :fail)
-      end
-
-      return specs
     end
   end
 end
