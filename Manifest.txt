@@ -45,4 +45,5 @@ public/course/frames/iframe_next.html
 public/course/frames/frame.html
 public/course/frames/frame_next.html
 views/layout.erb
+views/course_fail.erb
 views/welcome.erb

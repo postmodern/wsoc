@@ -46,5 +46,12 @@ module WSOC
       json Specs.map(request.host,request.port)
     end
 
+    get '/course/*' do
+      @url = request.url
+
+      status 404
+      show :course_fail
+    end
+
   end
 end
