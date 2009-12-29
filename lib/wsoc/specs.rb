@@ -31,20 +31,19 @@ module WSOC
     end
 
     def Specs.map(host,port=nil)
+      url = URI::HTTP.build(:host => host, :port => port)
+
       Specs.all.map do |spec|
-        link = URI::HTTP.build(
-          :host => host,
-          :port => port,
-          :path => spec[:link]
-        ).to_s
+        source = url.clone
+        source.path = spec[:source]
 
-        url = URI::HTTP.build(
-          :host => host,
-          :port => port,
-          :path => spec[:url]
-        ).to_s
+        dest = source.merge(URI.encode(spec[:dest]))
 
-        spec.merge(:link => link, :url => url)
+        if dest.path
+          dest.path = URI.expand_path(dest.path)
+        end
+
+        spec.merge(:source => source.to_s, :dest => dest.to_s)
       end
     end
   end
