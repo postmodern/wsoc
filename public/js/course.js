@@ -1,3 +1,8 @@
+function courseFail()
+{
+  alert("The Web Spider should not be invoking this JavaScript");
+}
+
 function courseSpecs()
 {
   $.getJSON("/specs.json",function(specs) {
