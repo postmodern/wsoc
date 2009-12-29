@@ -20,6 +20,8 @@
 
 require 'wsoc/helpers/rendering'
 
+require 'rack'
+
 module WSOC
   module Helpers
     include Rendering
