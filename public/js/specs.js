@@ -1,9 +1,4 @@
-function courseFail()
-{
-  alert("The Web Spider should not be invoking this JavaScript");
-}
-
-function courseSpecs()
+function loadSpecs()
 {
   $.getJSON("/specs.json",function(specs) {
     $("#content").append("<a href='#' class='specs show_specs'>Show Specs</a><a href='#' class='specs hide_specs'>Hide Specs</a><ul id='specs'></ul>");
