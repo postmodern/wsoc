@@ -27,7 +27,13 @@ module WSOC
 
       def remote_url(path,port=nil)
         s = "#{request.scheme}://#{request.host}"
-        s << ":#{port}" if port
+
+        if port
+          s << ":#{port}"
+        elsif request.port != 80
+          s << ":#{request.port}"
+        end
+
         s << path
 
         return s
