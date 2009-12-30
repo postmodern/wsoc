@@ -22,8 +22,11 @@ require 'wsoc/version'
 
 module WSOC
   module Config
-    # Path to the specs file
-    SPECS_PATH = '/specs.json'
+    # Paths to the specs files
+    SPECS_PATHS = {
+      :json => '/specs.json',
+      :yaml => '/specs.yaml'
+    }
 
     # Path to the start of the course
     COURSE_START_PATH = '/course/start.html'
