@@ -51,7 +51,25 @@ module WSOC
       json CourseSpecs.specs_for(request.host,request.port)
     end
 
+    course_template '/course/start.html'
+    course_template '/course/absolute/start.html'
+    course_template '/course/absolute/next.html'
+
+    course_template '/course/empty/start.html'
+
+    course_template '/course/frames/start.html'
+    course_template '/course/frames/frame.html'
+    course_template '/course/frames/frame_contents.html'
+    course_template '/course/frames/iframe.html'
+    course_template '/course/frames/iframe_contents.html'
+
+    course_template '/course/javascript/start.html'
+
+    course_template '/course/loop/start.html'
+    course_template '/course/loop/next.html'
+
     course_template '/course/remote/start.html'
+    course_template '/course/remote/next.html'
 
     get '/course/*' do
       @url = request.url
