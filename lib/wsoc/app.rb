@@ -19,7 +19,6 @@
 #
 
 require 'wsoc/specs'
-require 'wsoc/spec_parser'
 require 'wsoc/helpers'
 require 'wsoc/version'
 
@@ -33,8 +32,6 @@ module WSOC
     set :root, File.expand_path(File.join(File.dirname(__FILE__),'..','..'))
     set :course, File.join(self.public,'course')
     enable :static, :sessions
-
-    include SpecParser
 
     helpers WSOC::Helpers
 
