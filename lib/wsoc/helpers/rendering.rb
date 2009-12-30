@@ -19,6 +19,7 @@
 #
 
 require 'json'
+require 'yaml'
 
 module WSOC
   module Helpers
@@ -36,6 +37,12 @@ module WSOC
 
         obj = obj.to_s unless obj.respond_to?(:to_json)
         return obj.to_json
+      end
+
+      def yaml(obj)
+        content_type :yaml
+
+        return YAML.dump(obj)
       end
     end
   end
