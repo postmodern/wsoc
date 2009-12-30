@@ -18,20 +18,16 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'uri'
-
 module WSOC
   module Specs
     def self.included(base)
       base.module_eval do
         def self.specs_for(host,port=nil)
-          host_url = URI::HTTP.build(:host => host, :port => port)
+          prefix = "http://#{host}"
+          prefix << ":#{port}" if (port && port != 80)
 
           Specs.specs.map do |spec|
-            link = URI.encode(spec[:url])
-            url = host_url.merge(link)
-
-            spec.merge(:url => url.to_s)
+            spec.merge(:url => prefix + spec[:url])
           end
         end
 
