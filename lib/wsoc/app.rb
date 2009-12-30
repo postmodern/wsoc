@@ -51,6 +51,10 @@ module WSOC
       json CourseSpecs.specs_for(request.host,request.port)
     end
 
+    get '/specs.yaml' do
+      yaml CourseSpecs.specs_for(request.host,request.port)
+    end
+
     course_template '/course/start.html'
     course_template '/course/absolute/start.html'
     course_template '/course/absolute/next.html'
