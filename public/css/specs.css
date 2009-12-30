@@ -1,0 +1,16 @@
+pre.spec_url {
+	padding: 0.5em 1em;
+	background-color: #c3c3c3;
+}
+
+li.spec_visit > pre.spec_url {
+	border-left: 1em solid green;
+}
+
+li.spec_ignore > pre.spec_url {
+	border-left: 1em solid gray;
+}
+
+li.spec_fail > pre.spec_url {
+	border-left: 1em solid red;
+}
