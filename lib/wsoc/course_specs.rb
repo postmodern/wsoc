@@ -29,16 +29,16 @@ module WSOC
     should_visit '/course/absolute/next.html', 'should visit absolute links to unvisited pages'
 
     # empty links
-    should_visit '/course/empty/start.html ', 'should visit the empty links start page'
+    should_visit '/course/empty/start.html', 'should visit the empty links start page'
     should_ignore '/course/empty/start.html ', 'should ignore links with blank href attributes'
     should_ignore '/course/empty/start.html%20', 'should ignore links with blank href attributes'
 
     # frames
-    should_visit '/course/frames/start.html ', 'should visit the empty links start page'
-    should_visit '/course/frames/iframe.html ', 'should visit the contents of iframes'
-    should_visit '/course/frames/iframe_next.html ', 'should visit links within iframes'
-    should_visit '/course/frames/frame.html ', 'should visit the contents of frames'
-    should_visit '/course/frames/frame_next.html ', 'should visit links within frames'
+    should_visit '/course/frames/start.html', 'should visit the empty links start page'
+    should_visit '/course/frames/iframe.html', 'should visit the contents of iframes'
+    should_visit '/course/frames/iframe_next.html', 'should visit links within iframes'
+    should_visit '/course/frames/frame.html', 'should visit the contents of frames'
+    should_visit '/course/frames/frame_next.html', 'should visit links within frames'
 
     # javascript
     should_visit '/course/javascript/start.html', 'should visit the javascript links start page'
