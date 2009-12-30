@@ -18,11 +18,11 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'wsoc/spec'
+require 'wsoc/specs'
 
 module WSOC
   module CourseSpecs
-    include Spec
+    include Specs
 
     # absolute links
     should_visit '/course/absolute/start.html', 'should visit the absolute links start page'

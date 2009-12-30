@@ -21,13 +21,13 @@
 require 'uri'
 
 module WSOC
-  module Spec
+  module Specs
     def self.included(base)
       base.module_eval do
         def self.map(host,port=nil)
           host_url = URI::HTTP.build(:host => host, :port => port)
 
-          Spec.specs.map do |spec|
+          Specs.specs.map do |spec|
             link = URI.encode(spec[:url])
             url = host_url.merge(link)
 
@@ -38,25 +38,25 @@ module WSOC
         protected
 
         def self.should_visit(url,message=nil)
-          Spec.should(:visit,:url => url, :message => message)
+          Specs.should(:visit,:url => url, :message => message)
         end
 
         def self.should_ignore(url,message=nil)
-          Spec.should(:ignore,:url => url, :message => message)
+          Specs.should(:ignore,:url => url, :message => message)
         end
 
         def self.should_fail(url,message=nil)
-          Spec.should(:fail,:url => url, :message => message)
+          Specs.should(:fail,:url => url, :message => message)
         end
       end
     end
 
-    def Spec.specs
-      @@wsoc_spec_specs ||= []
+    def Specs.specs
+      @@wsoc_specs ||= []
     end
 
-    def Spec.should(behavior,options)
-      Spec.specs << {:behavior => behavior}.merge(options)
+    def Specs.should(behavior,options)
+      Specs.specs << {:behavior => behavior}.merge(options)
     end
   end
 end
