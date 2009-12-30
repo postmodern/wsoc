@@ -22,7 +22,20 @@ function courseSpecs()
     });
 
     $.each(specs,function(index,spec_data) {
-      var spec = $("<li class='spec'></li>").appendTo(spec_list);
+      var spec = $("<li></li>").appendTo(spec_list);
+
+      if (spec_data.behavior == 'visit')
+      {
+        spec.attr('class','spec_visit');
+      }
+      else if (spec_data.behavior == 'ignore')
+      {
+        spec.attr('class','spec_ignore');
+      }
+      else if (spec_data.behavior == 'fail')
+      {
+        spec.attr('class','spec_fail');
+      }
 
       $("<p class='spec_message'></p>").appendTo(spec).text(spec_data.message);
       $("<pre class='spec_url'></pre>").appendTo(spec).text(spec_data.url);
