@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+require 'wsoc/config'
 require 'wsoc/course_specs'
 require 'wsoc/helpers'
 require 'wsoc/version'
@@ -47,11 +48,11 @@ module WSOC
       show :welcome
     end
 
-    get '/specs.json' do
+    get Config::SPECS_PATHS[:json] do
       json CourseSpecs.specs_for(request.host,request.port)
     end
 
-    get '/specs.yaml' do
+    get Config::SPECS_PATHS[:yaml] do
       yaml CourseSpecs.specs_for(request.host,request.port)
     end
 
