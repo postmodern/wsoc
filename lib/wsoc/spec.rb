@@ -24,6 +24,17 @@ module WSOC
   module Spec
     def self.included(base)
       base.module_eval do
+        def self.map(host,port=nil)
+          url = URI::HTTP.build(:host => host, :port => port)
+
+          Spec.specs.map do |spec|
+            link = url.clone
+            link.path = spec[:url]
+
+            spec.merge(:link => link.to_s)
+          end
+        end
+
         protected
 
         def self.should_visit(url,message=nil)
@@ -46,17 +57,6 @@ module WSOC
 
     def Spec.should(behavior,options)
       Spec.specs << {:behavior => behavior}.merge(options)
-    end
-
-    def Spec.map(host,port=nil)
-      url = URI::HTTP.build(:host => host, :port => port)
-
-      Spec.specs.map do |spec|
-        link = url.clone
-        link.path = spec[:url]
-
-        spec.merge(:link => link.to_s)
-      end
     end
   end
 end
