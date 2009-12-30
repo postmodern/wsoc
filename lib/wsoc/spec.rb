@@ -25,13 +25,13 @@ module WSOC
     def self.included(base)
       base.module_eval do
         def self.map(host,port=nil)
-          url = URI::HTTP.build(:host => host, :port => port)
+          host_url = URI::HTTP.build(:host => host, :port => port)
 
           Spec.specs.map do |spec|
-            link = url.clone
-            link.path = spec[:url]
+            link = URI.escape(spec[:url])
+            url = host_url.merge(link)
 
-            spec.merge(:link => link.to_s)
+            spec.merge(:url => url.to_s)
           end
         end
 
