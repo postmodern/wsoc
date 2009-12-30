@@ -24,7 +24,7 @@ module WSOC
   module Specs
     def self.included(base)
       base.module_eval do
-        def self.map(host,port=nil)
+        def self.specs_for(host,port=nil)
           host_url = URI::HTTP.build(:host => host, :port => port)
 
           Specs.specs.map do |spec|
