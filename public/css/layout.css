@@ -7,16 +7,12 @@ body {
 }
 
 #banner {
-	bottom-border: 1px solid gray;
+	border-bottom: 1px solid gray;
 }
 
 #banner a {
 	color: black;
 	text-decoration: none;
-}
-
-#banner h1 {
-	right-border: 1px solid gray;
 }
 
 #content {
