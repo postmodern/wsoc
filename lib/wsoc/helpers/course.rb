@@ -21,6 +21,10 @@
 module WSOC
   module Helpers
     module Course
+      def title_for(name)
+        "Web Spider Obstacle Course :: #{name}"
+      end
+
       def remote_url(path,port=nil)
         s = "#{request.scheme}://#{request.host}"
         s << ":#{port}" if port
