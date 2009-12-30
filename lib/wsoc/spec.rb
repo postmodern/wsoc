@@ -28,7 +28,7 @@ module WSOC
           host_url = URI::HTTP.build(:host => host, :port => port)
 
           Spec.specs.map do |spec|
-            link = URI.escape(spec[:url])
+            link = URI.encode(spec[:url])
             url = host_url.merge(link)
 
             spec.merge(:url => url.to_s)
