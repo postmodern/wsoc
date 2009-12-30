@@ -26,7 +26,6 @@ function courseSpecs()
 
       $("<p class='spec_message'></p>").appendTo(spec).text(spec_data.message);
       $("<pre class='spec_url'></pre>").appendTo(spec).text(spec_data.url);
-      $("<pre class='spec_example'></pre>").appendTo(spec).text(spec_data.example);
     });
   });
 }
