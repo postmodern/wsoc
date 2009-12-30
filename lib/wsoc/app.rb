@@ -35,6 +35,14 @@ module WSOC
 
     helpers WSOC::Helpers
 
+    def self.course_template(path)
+      name = path[1..-1].gsub(/\.\S*$/,'').gsub(/\/+/,'_').to_sym
+
+      get(path) do
+        erb name, :layout => false
+      end
+    end
+
     get '/' do
       show :welcome
     end
@@ -42,6 +50,8 @@ module WSOC
     get '/specs.json' do
       json CourseSpecs.specs_for(request.host,request.port)
     end
+
+    course_template '/course/remote/start.html'
 
     get '/course/*' do
       @url = request.url
