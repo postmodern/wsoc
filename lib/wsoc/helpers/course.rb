@@ -25,15 +25,9 @@ module WSOC
         "Web Spider Obstacle Course :: #{name}"
       end
 
-      def remote_url(path,port=nil)
+      def remote_url(path)
         s = "#{request.scheme}://#{request.host}"
-
-        if port
-          s << ":#{port}"
-        elsif request.port != 80
-          s << ":#{request.port}"
-        end
-
+        s << ":#{request.port}" if request.port != 80
         s << path
 
         return s
