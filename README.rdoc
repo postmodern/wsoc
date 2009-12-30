@@ -27,6 +27,11 @@ the WSOC server at the following URL, as JSON encoded data:
 
   http://localhost:8080/specs.json
 
+WSOC also provides a YAML version of the specs, available at the following
+URL:
+
+  http://localhost:8080/specs.yaml
+
 == REQUIREMENTS:
 
 * {sinatra}[http://sinatrarb.com] >= 0.9.4
