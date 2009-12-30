@@ -17,6 +17,7 @@ the thoroughness and resilience of Web Spiders.
 == REQUIREMENTS:
 
 * {sinatra}[http://sinatrarb.com] >= 0.9.4
+* {json}[http://json.rubyforge.org] >= 1.2.0
 
 == INSTALL:
 
