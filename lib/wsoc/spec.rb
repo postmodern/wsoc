@@ -45,10 +45,7 @@ module WSOC
     end
 
     def Spec.should(behavior,options)
-      Spec.specs << {
-        :behavior => behavior,
-        :source => @@wsoc_current_page
-      }.merge(options)
+      Spec.specs << {:behavior => behavior}.merge(options)
     end
 
     def Spec.map(host,port=nil)
