@@ -18,17 +18,16 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'wsoc/helpers/course'
-require 'wsoc/helpers/rendering'
-
-require 'rack'
-
 module WSOC
   module Helpers
-    include Rack::Utils
-    alias :h :escape_html
+    module Course
+      def remote_url(path,port=nil)
+        s = "#{request.scheme}://#{request.host}"
+        s << ":#{port}" if port
+        s << path
 
-    include Rendering
-    include Course
+        return s
+      end
+    end
   end
 end
