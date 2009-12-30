@@ -6,6 +6,7 @@ Rakefile
 config.ru
 bin/wsoc
 lib/wsoc.rb
+lib/wsoc/config.rb
 lib/wsoc/extensions.rb
 lib/wsoc/extensions/uri.rb
 lib/wsoc/specs.rb
