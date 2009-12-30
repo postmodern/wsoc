@@ -40,7 +40,7 @@ module WSOC
     end
 
     get '/specs.json' do
-      json Specs.map(request.host,request.port)
+      json CourseSpecs.map(request.host,request.port)
     end
 
     get '/course/*' do

@@ -21,7 +21,7 @@
 require 'wsoc/spec'
 
 module WSOC
-  module Specs
+  module CourseSpecs
     include Spec
 
     # absolute links
