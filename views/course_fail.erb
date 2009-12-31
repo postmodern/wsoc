@@ -5,5 +5,7 @@ The Web Spider attempted requesting a page that was outside of the
 Obstacle Course.
 </p>
 
+<% if request.referer %>
 <p>Requested URL:<p>
-<pre><%=h @url %></pre>
+<pre><%=h request.referer %></pre>
+<% end %>

@@ -76,11 +76,13 @@ module WSOC
     course_template '/course/remote/start.html'
     course_template '/course/remote/next.html'
 
-    get '/course/*' do
-      @url = request.url
-
+    get '/course/fail' do
       status 404
       show :course_fail
+    end
+
+    get '/course/*' do
+      redirect remote_url('/course/fail')
     end
 
   end
