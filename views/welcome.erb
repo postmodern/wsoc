@@ -1,5 +1,33 @@
 <h2>Welcome</h2>
 
 <p>
-Welcome to the Web Spider Obstacle Course (WSOC).
+Welcome to the Web Spider Obstacle Course (WSOC). The WSOC is an example web
+server that tests the thoroughness and resilience of Web Spiders.
 </p>
+
+<p>
+For a Web Spider to begin the Obstacle Course, it must start at the
+following URL:
+</p>
+<pre><%=h course_start %></pre>
+
+<p>
+For a Web Spider to complete the Obstacle Course, it must attempt to spider
+the links within the <b><%=h course_dir %></b> directory of the WSOC server. While
+spidering links a successfull Web Spider must observe the following criteria:
+</p>
+<ol>
+  <li>Never make a request more than once for a given link.</li>
+  <li>Never access other servers besides the WSOC server.</li>
+  <li>
+  Never access pages that are outside of the <b><%=h course_dir %></b>
+  directory on the WSOC server.
+  </li>
+</ol>
+
+<p>
+If a Web Spider accesses a page that is not present, the WSOC server will
+redirect the spider to the following URL indicating failure of the
+Obstacle Course:
+</p>
+<pre><%=h course_fail %></pre>
