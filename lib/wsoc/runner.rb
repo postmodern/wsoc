@@ -51,12 +51,15 @@ module WSOC
     def run(*args)
       optparse(*args)
 
-      App.run!(
+      options = {
         :env => :production,
         :host => @host,
-        :port => @port,
-        :server => @handler
-      )
+        :port => @port
+      }
+
+      options.merge!(:server => @handler) if @handler
+
+      App.run!(options)
     end
 
     protected
