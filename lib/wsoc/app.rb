@@ -81,7 +81,7 @@ module WSOC
       show :course_fail
     end
 
-    get '/course/*' do
+    get '/*' do
       redirect remote_url('/course/fail')
     end
 
