@@ -36,6 +36,10 @@ module WSOC
         return s
       end
 
+      def course_dir
+        "#{COURSE_DIR}/"
+      end
+
       def course_start
         remote_url COURSE_START_PATH
       end
