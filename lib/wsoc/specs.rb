@@ -27,7 +27,7 @@ module WSOC
           prefix << ":#{port}" if (port && port != 80)
 
           Specs.specs.map do |spec|
-            unless spec[:behavior] == :fail
+            unless spec[:url] =~ /^[a-zA-Z0-9]+:/
               spec.merge(:url => prefix + spec[:url])
             else
               spec
