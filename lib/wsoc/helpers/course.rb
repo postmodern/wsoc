@@ -37,15 +37,15 @@ module WSOC
       end
 
       def course_dir
-        "#{COURSE_DIR}/"
+        "#{Config::COURSE_DIR}/"
       end
 
       def course_start
-        remote_url COURSE_START_PATH
+        remote_url Config::COURSE_START_PATH
       end
 
       def course_fail
-        remote_url COURSE_FAIL_PATH
+        remote_url Config::COURSE_FAIL_PATH
       end
 
       def specs
