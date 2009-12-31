@@ -4,7 +4,7 @@ Manifest.txt
 README.rdoc
 Rakefile
 config.ru
-bin/wsoc
+bin/wsoc_server
 lib/wsoc.rb
 lib/wsoc/config.rb
 lib/wsoc/extensions.rb
