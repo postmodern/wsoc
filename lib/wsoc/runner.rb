@@ -18,18 +18,13 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+require 'wsoc/config'
 require 'wsoc/app'
 
 require 'optparse'
 
 module WSOC
   class Runner
-
-    # Default host to run the WSOC server on
-    DEFAULT_HOST = 'localhost'
-
-    # Default port to run the WSOC server on
-    DEFAULT_PORT = 8080
 
     # Host to run the WSOC server on
     attr_reader :host
@@ -38,8 +33,8 @@ module WSOC
     attr_reader :port
 
     def initialize
-      @host = DEFAULT_HOST
-      @port = DEFAULT_PORT
+      @host = Config::DEFAULT_HOST
+      @port = Config::DEFAULT_PORT
       @handler = nil
     end
 
@@ -69,11 +64,11 @@ module WSOC
 
       opts.banner = "usage: #{$0} [options]"
 
-      opts.on('-H','--host HOST',"The host to run the server on","Default: #{DEFAULT_HOST}") do |host|
+      opts.on('-H','--host HOST',"The host to run the server on","Default: #{@host}") do |host|
         @host = host
       end
 
-      opts.on('-p','--port PORT',"The port to run the server on","Default: #{DEFAULT_PORT}") do |port|
+      opts.on('-p','--port PORT',"The port to run the server on","Default: #{@port}") do |port|
         @port = port.to_i
       end
 

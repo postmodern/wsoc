@@ -22,6 +22,12 @@ require 'wsoc/version'
 
 module WSOC
   module Config
+    # Default host to run the WSOC server on
+    DEFAULT_HOST = 'localhost'
+
+    # Default port to run the WSOC server on
+    DEFAULT_PORT = 8080
+
     # Paths to the specs files
     SPECS_PATHS = {
       :json => '/specs.json',
