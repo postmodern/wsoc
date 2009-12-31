@@ -62,6 +62,7 @@ module WSOC
     should_visit '/course/remote/start.html', 'should visit the remote links start page'
     should_ignore '/course/loop/../remote/start.html', 'should resolve the paths of remote links'
     should_visit '/course/remote/next.html', 'should visit normal remote links'
-    should_fail 'http://spidr.rubyforge.org:1337/course/remote/fail.html', 'should safely fail on bad connections'
+    should_fail 'http://spidr.rubyforge.org:1337/course/remote/fail.html', 'should safely fail on closed ports'
+    should_fail 'http://not.found/course/remote/fail.html', 'should safely fail on bad host-names'
   end
 end
