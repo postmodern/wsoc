@@ -24,6 +24,10 @@ views/layout.erb
 views/specs.erb
 views/course_fail.erb
 views/course_start.erb
+views/course_relative_start.erb
+views/course_relative_same_directory.erb
+views/course_relative_current_directory.erb
+views/course_relative_normal.erb
 views/course_absolute_start.erb
 views/course_absolute_next.erb
 views/course_empty_start.erb

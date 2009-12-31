@@ -66,6 +66,12 @@ module WSOC
     end
 
     course_template '/course/start.html'
+
+    course_template '/course/relative/start.html'
+    course_template '/course/relative/same_directory.html'
+    course_template '/course/relative/current_directory.html'
+    course_template '/course/relative/normal.html'
+
     course_template '/course/absolute/start.html'
     course_template '/course/absolute/next.html'
 
