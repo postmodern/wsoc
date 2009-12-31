@@ -48,12 +48,18 @@ module WSOC
       show :welcome
     end
 
+    get '/specs' do
+      @specs = specs
+
+      show :specs
+    end
+
     get Config::SPECS_PATHS[:json] do
-      json CourseSpecs.specs_for(request.host,request.port)
+      json specs
     end
 
     get Config::SPECS_PATHS[:yaml] do
-      yaml CourseSpecs.specs_for(request.host,request.port)
+      yaml specs
     end
 
     course_template '/course/start.html'

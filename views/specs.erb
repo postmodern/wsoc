@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="/css/specs.css" />
+<script type="text/javascript">
+  $(document).ready(function() {
+    function hide_specs() {
+      $("#specs").hide();
+
+      $("#hide_specs").css({'color': 'gray', 'text-decoration': 'none'});
+      $("#view_specs").css({'color': 'black', 'text-decoration': 'underline'});
+    }
+
+    function view_specs() {
+      $("#specs").show();
+
+      $("#hide_specs").css({'color': 'black', 'text-decoration': 'underline'});
+      $("#view_specs").css({'color': 'gray', 'text-decoration': 'none'});
+    }
+
+    hide_specs();
+
+    $("#view_specs").click(view_specs);
+    $("#hide_specs").click(hide_specs);
+  });
+</script>
+
+<h2>Specs</h2>
+
+<p>
+The Course Specs provide a list of URLs that must be visited or ignored.
+This listing of URLs and expected actions provides further testing
+information that can be used by other Web Spiders.
+</p>
+
+<p>
+  <a href="#" id="view_specs">View</a> | <a href="#" id="hide_specs">Hide</a>
+</p>
+
+<ul id="specs">
+  <% @specs.each do |spec| %>
+  <li class="spec_<%= spec[:behavior] %>">
+    <p class="spec_message"><%=h spec[:message] %></p>
+    <pre class="spec_url"><%=h spec[:url] %></pre>
+  </li>
+  <% end %>
+</ul>
+
+<h2>Download</h2>
+
+<p><a href="/specs.json">JSON</a> | <a href="/specs.yaml">YAML</a></p>
