@@ -38,9 +38,9 @@ module WSOC
     # frames
     should_visit '/course/frames/start.html', 'should visit the empty links start page'
     should_visit '/course/frames/iframe.html', 'should visit the contents of iframes'
-    should_visit '/course/frames/iframe_next.html', 'should visit links within iframes'
+    should_visit '/course/frames/iframe_contents.html', 'should visit links within iframes'
     should_visit '/course/frames/frame.html', 'should visit the contents of frames'
-    should_visit '/course/frames/frame_next.html', 'should visit links within frames'
+    should_visit '/course/frames/frame_contents.html', 'should visit links within frames'
 
     # javascript
     should_visit '/course/javascript/start.html', 'should visit the javascript links start page'
