@@ -28,7 +28,13 @@ module WSOC
       :yaml => '/specs.yaml'
     }
 
+    # Course directory
+    COURSE_DIR = '/course'
+
     # Path to the start of the course
-    COURSE_START_PATH = '/course/start.html'
+    COURSE_START_PATH = "#{COURSE_DIR}/start.html"
+
+    # Path to the course failure page
+    COURSE_FAIL_PATH = "#{COURSE_DIR}/fail"
   end
 end
