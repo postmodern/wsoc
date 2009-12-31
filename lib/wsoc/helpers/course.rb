@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+require 'wsoc/course_specs'
+
 module WSOC
   module Helpers
     module Course
@@ -31,6 +33,10 @@ module WSOC
         s << path
 
         return s
+      end
+
+      def specs
+        CourseSpecs.specs_for(request.host,request.port)
       end
     end
   end
