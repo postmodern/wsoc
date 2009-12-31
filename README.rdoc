@@ -12,7 +12,7 @@ the thoroughness and resilience of Web Spiders.
 
 == SYNOPSIS:
 
-  $ wsoc_server localhost 8080
+  $ wsoc_server -p 8080
 
 == REQUIREMENTS:
 
