@@ -19,7 +19,7 @@ the thoroughness and resilience of Web Spiders.
   * Links with relative-paths.
   * Links with absolute-paths.
   * Remote links.
-  * +javascript:+ links.
+  * <tt>javascript:</tt> links.
   * Links within +frameset+ and +iframe+ tags.
 
 == SYNOPSIS:
