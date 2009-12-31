@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
+require 'wsoc/config'
 require 'wsoc/course_specs'
 
 module WSOC
@@ -33,6 +34,14 @@ module WSOC
         s << path
 
         return s
+      end
+
+      def course_start
+        remote_url COURSE_START_PATH
+      end
+
+      def course_fail
+        remote_url COURSE_FAIL_PATH
       end
 
       def specs
