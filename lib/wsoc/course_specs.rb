@@ -24,6 +24,8 @@ module WSOC
   module CourseSpecs
     include Specs
 
+    should_ignore '/course/fail', 'should not visit links not part of the obstacle course'
+
     # absolute links
     should_visit '/course/absolute/start.html', 'should visit the absolute links start page'
     should_visit '/course/absolute/next.html', 'should visit absolute links to unvisited pages'
