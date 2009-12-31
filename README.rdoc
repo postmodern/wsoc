@@ -10,6 +10,18 @@ the thoroughness and resilience of Web Spiders.
 
 == FEATURES:
 
+* Written as a Sinatra application.
+* Provides Specs for the expected behavior of a web spider for every link in
+  the Obstacle Course.
+* Provides an Obstacle Course containing:
+  * Empty links.
+  * Circular links.
+  * Links with relative-paths.
+  * Links with absolute-paths.
+  * Remote links.
+  * +javascript:+ links.
+  * Links within +frameset+ and +iframe+ tags.
+
 == SYNOPSIS:
 
   $ wsoc_server -p 8080
