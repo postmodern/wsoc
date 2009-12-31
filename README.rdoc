@@ -5,7 +5,7 @@
 
 == DESCRIPTION:
 
-The Web Spider Obstacle Course (WSOC) is an example web-site that tests
+The Web Spider Obstacle Course (WSOC) is an example web server that tests
 the thoroughness and resilience of Web Spiders.
 
 == FEATURES:
@@ -20,16 +20,17 @@ Then simply point your Web Spider of choice at the following URL:
 
 For the Web Spider to complete the course, it must spider every link listed
 in the +/course/+ directory exactly once. A successfull Web Spider will not
-leave the WSOC server nor the +/course/+ directory, while spidering links.
+access servers other than the WSOC server, nor access pages outside of the
++/course/+ directory.
 
 The list of URLs that a Web Spider must visit or ignore can be obtained from
-the WSOC server at the following URL, as JSON encoded data:
+the WSOC server at the following URL:
+
+  http://localhost:8080/specs
+
+JSON and YAML versions of the specs can be downloaded at:
 
   http://localhost:8080/specs.json
-
-WSOC also provides a YAML version of the specs, available at the following
-URL:
-
   http://localhost:8080/specs.yaml
 
 == REQUIREMENTS:
