@@ -32,7 +32,6 @@ module WSOC
 
     # empty links
     should_visit '/course/empty/start.html', 'should visit the empty links start page'
-    should_ignore '/course/empty/start.html ', 'should ignore links with blank href attributes'
     should_ignore '/course/empty/start.html%20', 'should ignore links with blank href attributes'
 
     # frames
