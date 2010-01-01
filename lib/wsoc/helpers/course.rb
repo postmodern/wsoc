@@ -24,6 +24,10 @@ require 'wsoc/course_specs'
 module WSOC
   module Helpers
     module Course
+      def course_page(name)
+        erb name, :layout => false
+      end
+
       def title_for(*names)
         (['Web Spider Obstacle Course'] + names).join(' :: ')
       end

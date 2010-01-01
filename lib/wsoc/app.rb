@@ -91,32 +91,32 @@ module WSOC
     course_template '/course/remote/start.html'
     course_template '/course/remote/next.html'
 
-    course_template '/course/cookies/protected/1.html'
-    course_template '/course/cookies/protected/2.html'
-
     get '/course/cookies/start.html' do
       response.set_cookie 'auth_level', '1'
 
-      show :course_cookies_start
+      course_page :course_cookies_start
     end
 
     get '/course/cookies/get.html' do
       @authed = (request.cookies['auth_level'] == '1')
 
-      show :course_cookies_get
+      course_page :course_cookies_get
     end
 
     get '/course/cookies/post.html' do
       response.set_cookie 'auth_level', '2'
 
-      show :course_cookies_post
+      course_page :course_cookies_post
     end
 
     post '/course/cookies/post.html' do
       @authed = (request.cookies['auth_level'] == '2')
 
-      show :course_cookies_post
+      course_page :course_cookies_post
     end
+
+    course_template '/course/cookies/protected/1.html'
+    course_template '/course/cookies/protected/2.html'
 
     get '/course/fail' do
       status 404
