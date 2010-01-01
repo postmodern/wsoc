@@ -19,6 +19,10 @@ body {
 	padding: 1em;
 }
 
+#content a {
+	color: black;
+}
+
 #content kbd {
 	background-color: #eeeeee;
 }
