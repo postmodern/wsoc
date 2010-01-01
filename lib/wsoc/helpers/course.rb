@@ -24,8 +24,8 @@ require 'wsoc/course_specs'
 module WSOC
   module Helpers
     module Course
-      def title_for(name)
-        "Web Spider Obstacle Course :: #{name}"
+      def title_for(*names)
+        (['Web Spider Obstacle Course'] + names).join(' :: ')
       end
 
       def remote_url(path)
