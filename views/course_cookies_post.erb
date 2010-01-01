@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title><%= title_for 'Cookies', 'POST requests' %></title>
+  </head>
+
+  <body>
+    <% if @authed %>
+    <p>
+      <a href="protected/2.html">protected content</a>
+    </p>
+    <% else %>
+    <form method="post">
+      <input type="submit" name="Submit" />
+    </form>
+    <% end %>
+  </body>
+</html>

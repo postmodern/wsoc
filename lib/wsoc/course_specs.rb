@@ -63,5 +63,11 @@ module WSOC
     should_visit '/course/remote/next.html', 'should visit normal remote links'
     should_fail 'http://spidr.rubyforge.org:1337/course/remote/fail.html', 'should safely fail on closed ports'
     should_fail 'http://not.found/course/remote/fail.html', 'should safely fail on bad host-names'
+
+    should_visit '/course/cookies/start.html', 'should visit the cookies start page'
+    should_visit '/course/cookies/get.html', 'should visit the cookies GET request test page'
+    should_visit '/course/cookies/protected/1.html', 'should visit the first cookie protected page'
+    should_visit '/course/cookies/post.html', 'should visit the cookies POST request test page'
+    should_visit '/course/cookies/protected/2.html', 'should visit the second cookie protected page'
   end
 end

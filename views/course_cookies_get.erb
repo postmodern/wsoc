@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title><%= title_for 'Cookies', 'GET requests' %></title>
+  </head>
+
+  <body>
+    <% if @authed %>
+    <p>
+      <a href="protected/1.html">protected content</a>
+    </p>
+    <% end %>
+  </body>
+</html>
