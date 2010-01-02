@@ -87,31 +87,31 @@ module WSOC
       redirect remote_url('/course/redirect/300/pass.html')
     end
 
-    course_pass '/course/redirect/300/pass.html'
+    course_pass '/course/redirects/300/pass.html'
 
-    get '/course/redirect/301.html' do
-      redirect remote_url('/course/redirect/301/pass.html')
+    get '/course/redirects/301.html' do
+      redirect remote_url('/course/redirects/301/pass.html')
     end
 
-    course_pass '/course/redirect/301/pass.html'
+    course_pass '/course/redirects/301/pass.html'
 
-    get '/course/redirect/302.html' do
-      redirect remote_url('/course/redirect/302/pass.html')
+    get '/course/redirects/302.html' do
+      redirect remote_url('/course/redirects/302/pass.html')
     end
 
-    course_pass '/course/redirect/302/pass.html'
+    course_pass '/course/redirects/302/pass.html'
 
-    get '/course/redirect/303.html' do
-      redirect remote_url('/course/redirect/303/pass.html')
+    get '/course/redirects/303.html' do
+      redirect remote_url('/course/redirects/303/pass.html')
     end
 
-    course_pass '/course/redirect/303/pass.html'
+    course_pass '/course/redirects/303/pass.html'
 
-    get '/course/redirect/307.html' do
-      redirect remote_url('/course/redirect/307/pass.html')
+    get '/course/redirects/307.html' do
+      redirect remote_url('/course/redirects/307/pass.html')
     end
 
-    course_pass '/course/redirect/307/pass.html'
+    course_pass '/course/redirects/307/pass.html'
 
     get '/course/cookies/start.html' do
       response.set_cookie 'auth_level', '1'

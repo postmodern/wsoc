@@ -27,19 +27,19 @@ module WSOC
     should_ignore '/course/fail',
                   'should not visit links not part of the obstacle course'
 
-    # absolute links
+    # Absolute Links
     should_visit '/course/absolute/start.html',
                  'should visit the absolute links start page'
     should_visit '/course/absolute/next.html',
                  'should visit absolute links to unvisited pages'
 
-    # empty links
+    # Empty Links
     should_visit '/course/empty/start.html',
                  'should visit the empty links start page'
     should_ignore '/course/empty/start.html%20',
                   'should ignore links with blank href attributes'
 
-    # frames
+    # Frames
     should_visit '/course/frames/start.html',
                  'should visit the empty links start page'
     should_visit '/course/frames/iframe.html',
@@ -51,7 +51,7 @@ module WSOC
     should_visit '/course/frames/frame_contents.html',
                  'should visit links within frames'
 
-    # javascript
+    # Javascript Links
     should_visit '/course/javascript/start.html',
                  'should visit the javascript links start page'
     should_ignore '/course/javascript/start.html#',
@@ -59,13 +59,13 @@ module WSOC
     should_ignore 'javascript:fail();',
                   'should ignore javascript: links'
 
-    # looping links
+    # Looping Links
     should_visit '/course/loop/start.html',
                  'should visit the looping links start page'
     should_visit '/course/loop/next.html',
                  'should visit non-circular linking pages'
 
-    # relative links
+    # Relative Links
     should_visit '/course/relative/start.html',
                  'should visit the relative links start page'
     should_ignore '/course/relative/start.html#',
@@ -77,7 +77,7 @@ module WSOC
     should_visit '/course/relative/same_directory.html',
                  'should visit relative links that traverse directories'
 
-    # remote links
+    # Remote Links
     should_visit '/course/remote/start.html',
                  'should visit the remote links start page'
     should_ignore '/course/loop/../remote/start.html',
@@ -89,11 +89,36 @@ module WSOC
     should_fail 'http://not.found/course/remote/fail.html',
                 'should safely fail on bad host-names'
 
+    # Cookies
     should_visit '/course/cookies/start.html',
                  'should visit the cookies start page'
     should_visit '/course/cookies/get.html',
                  'should visit the cookies GET request test page'
     should_visit '/course/cookies/protected/1.html',
                  'should visit the first cookie protected page'
+
+    # HTTP Redirects
+    should_visit '/course/redirects/start.html',
+                 'should visit the HTTP redirects start page'
+    should_visit '/course/redirects/300.html',
+                 'should visit the 300 HTTP redirect test page'
+    should_visit '/course/redirects/300/pass.html',
+                 'should follow HTTP 300 redirects'
+    should_visit '/course/redirects/301.html',
+                 'should visit the 301 HTTP redirect test page'
+    should_visit '/course/redirects/301/pass.html',
+                 'should follow HTTP 301 redirects'
+    should_visit '/course/redirects/302.html',
+                 'should visit the 302 HTTP redirect test page'
+    should_visit '/course/redirects/302/pass.html',
+                 'should follow HTTP 302 redirects'
+    should_visit '/course/redirects/303.html',
+                 'should visit the 303 HTTP redirect test page'
+    should_visit '/course/redirects/303/pass.html',
+                 'should follow HTTP 303 redirects'
+    should_visit '/course/redirects/307.html',
+                 'should visit the 307 HTTP redirect test page'
+    should_visit '/course/redirects/307/pass.html',
+                 'should follow HTTP 307 redirects'
   end
 end
