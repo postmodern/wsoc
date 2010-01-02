@@ -40,6 +40,12 @@ module WSOC
             erb name, :layout => false
           end
         end
+
+        def self.course_pass(path)
+          get(path) do
+            erb :course_pass, :layout => false
+          end
+        end
       end
     end
   end
