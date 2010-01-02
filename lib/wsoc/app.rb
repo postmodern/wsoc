@@ -32,15 +32,6 @@ module WSOC
 
     include Course
 
-    set :host, Config::DEFAULT_HOST
-    set :port, Config::DEFAULT_PORT
-
-    set :root, File.expand_path(File.join(File.dirname(__FILE__),'..','..'))
-    set :course, File.join(self.public,'course')
-    enable :static, :sessions
-
-    helpers WSOC::Helpers
-
     get '/' do
       show :welcome
     end
