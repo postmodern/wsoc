@@ -9,6 +9,7 @@ Hoe.spec('wsoc') do
 
   self.readme_file = 'README.rdoc'
   self.history_file = 'History.rdoc'
+  self.remote_rdoc_dir = '/'
 
   self.extra_deps = [
     ['json', '>=1.2.0'],
