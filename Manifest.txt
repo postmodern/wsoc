@@ -42,7 +42,5 @@ views/course_remote_start.erb
 views/course_remote_next.erb
 views/course_cookies_start.erb
 views/course_cookies_get.erb
-views/course_cookies_post.erb
 views/course_cookies_protected_1.erb
-views/course_cookies_protected_2.erb
 views/welcome.erb

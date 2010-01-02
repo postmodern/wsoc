@@ -95,9 +95,5 @@ module WSOC
                  'should visit the cookies GET request test page'
     should_visit '/course/cookies/protected/1.html',
                  'should visit the first cookie protected page'
-    should_visit '/course/cookies/post.html',
-                 'should visit the cookies POST request test page'
-    should_visit '/course/cookies/protected/2.html',
-                 'should visit the second cookie protected page'
   end
 end
