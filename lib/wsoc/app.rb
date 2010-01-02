@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'wsoc/config'
+require 'wsoc/course'
 require 'wsoc/course_specs'
 require 'wsoc/helpers'
 require 'wsoc/version'
@@ -30,6 +30,8 @@ require 'nokogiri'
 module WSOC
   class App < Sinatra::Base
 
+    include Course
+
     set :host, Config::DEFAULT_HOST
     set :port, Config::DEFAULT_PORT
 
@@ -38,14 +40,6 @@ module WSOC
     enable :static, :sessions
 
     helpers WSOC::Helpers
-
-    def self.course_template(path)
-      name = path[1..-1].gsub(/\.\S*$/,'').gsub(/\/+/,'_').to_sym
-
-      get(path) do
-        erb name, :layout => false
-      end
-    end
 
     get '/' do
       show :welcome
@@ -66,6 +60,11 @@ module WSOC
     end
 
     course_template '/course/start.html'
+
+    get '/course/fail' do
+      status 404
+      show :course_fail
+    end
 
     course_template '/course/relative/start.html'
     course_template '/course/relative/same_directory.html'
@@ -90,6 +89,28 @@ module WSOC
 
     course_template '/course/remote/start.html'
     course_template '/course/remote/next.html'
+
+    course_template '/course/redirect/start.html'
+
+    get '/course/redirect/300.html' do
+      redirect remote_url('/course/redirect/300/pass.html')
+    end
+
+    get '/course/redirect/301.html' do
+      redirect remote_url('/course/redirect/301/pass.html')
+    end
+
+    get '/course/redirect/302.html' do
+      redirect remote_url('/course/redirect/302/pass.html')
+    end
+
+    get '/course/redirect/303.html' do
+      redirect remote_url('/course/redirect/303/pass.html')
+    end
+
+    get '/course/redirect/307.html' do
+      redirect remote_url('/course/redirect/307/pass.html')
+    end
 
     get '/course/cookies/start.html' do
       response.set_cookie 'auth_level', '1'
@@ -117,11 +138,6 @@ module WSOC
 
     course_template '/course/cookies/protected/1.html'
     course_template '/course/cookies/protected/2.html'
-
-    get '/course/fail' do
-      status 404
-      show :course_fail
-    end
 
     get '/*' do
       redirect remote_url('/course/fail')

@@ -14,6 +14,7 @@ lib/wsoc/course_specs.rb
 lib/wsoc/helpers.rb
 lib/wsoc/helpers/rendering.rb
 lib/wsoc/helpers/course.rb
+lib/wsoc/course.rb
 lib/wsoc/app.rb
 lib/wsoc/runner.rb
 lib/wsoc/version.rb
