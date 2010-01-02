@@ -33,6 +33,15 @@ module WSOC
 
         helpers WSOC::Helpers
 
+        #
+        # Adds a path to the Obstacle Course, where a course template
+        # will be rendered.
+        #
+        # @param [String] path
+        #   The path to add to the obstacle course.
+        #
+        # @since 0.1.0
+        #
         def self.course_template(path)
           name = path[1..-1].gsub(/\.\S*$/,'').gsub(/\/+/,'_').to_sym
 
@@ -41,6 +50,14 @@ module WSOC
           end
         end
 
+        #
+        # Adds a path to the Obstacle Course.
+        #
+        # @param [String] path
+        #   The path to add to the obstacle course.
+        #
+        # @since 0.1.0
+        #
         def self.course_pass(path)
           get(path) do
             erb :course_pass, :layout => false

@@ -32,17 +32,38 @@ module WSOC
     # Port to run the WSOC server on
     attr_reader :port
 
+    #
+    # Creates a new runner.
+    #
+    # @since 0.1.0
+    #
     def initialize
       @host = Config::DEFAULT_HOST
       @port = Config::DEFAULT_PORT
       @handler = nil
     end
 
+    #
+    # Starts the runner.
+    #
+    # @param [Array<String>] argvs (ARGV)
+    #   The arguments to run the runner with.
+    #
+    # @since 0.1.0
+    #
     def Runner.start(args=ARGV)
       runner = self.new()
       runner.run(*args)
     end
 
+    #
+    # Runs the runner.
+    #
+    # @param [Array<String>] args
+    #   The arguments to run the runner with.
+    #
+    # @since 0.1.0
+    #
     def run(*args)
       optparse(*args)
 
@@ -59,6 +80,14 @@ module WSOC
 
     protected
 
+    #
+    # Parses the given arguments.
+    #
+    # @param [Array<String>] args
+    #   The arguments to parse.
+    #
+    # @since 0.1.0
+    #
     def optparse(*args)
       opts = OptionParser.new
 

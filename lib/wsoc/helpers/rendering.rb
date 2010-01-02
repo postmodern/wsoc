@@ -24,14 +24,53 @@ require 'yaml'
 module WSOC
   module Helpers
     module Rendering
+      #
+      # Renders a partial template.
+      #
+      # @param [Symbol] page
+      #   The name of the partial template.
+      #
+      # @param [Hash] options
+      #   Additional options.
+      #
+      # @return [String]
+      #   The rendered partial.
+      #
+      # @since 0.1.0
+      #
       def partial(page,options={})
         erb "_#{page}".to_sym, options.merge(:layout => false)
       end
 
+      #
+      # Renders a page.
+      #
+      # @param [Symbol] page
+      #   Name of the page to render.
+      #
+      # @param [Hash] options
+      #   Additional options.
+      #
+      # @return [String]
+      #   The rendered page.
+      #
+      # @since 0.1.0
+      #
       def show(page,options={})
         erb(page,options)
       end
 
+      #
+      # Renders a JSON blob and sets the content-type accordingly.
+      #
+      # @param [Object] obj
+      #   The object to encode.
+      #
+      # @return [String]
+      #   The JSON encoded object.
+      #
+      # @since 0.1.0
+      #
       def json(obj)
         content_type :json
 
@@ -39,6 +78,17 @@ module WSOC
         return obj.to_json
       end
 
+      #
+      # Renders a YAML blob and sets the content-type accordingly.
+      #
+      # @param [Object] obj
+      #   The object to encode.
+      #
+      # @return [String]
+      #   The YAML encoded object.
+      #
+      # @since 0.1.0
+      #
       def yaml(obj)
         content_type :yaml
 
