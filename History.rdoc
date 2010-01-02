@@ -1,4 +1,16 @@
-=== 1.0.0 / 2009-12-28
+=== 1.0.0 / 2010-01-02
 
 * Initial release:
+  * Written as a Sinatra application.
+  * Provides Specs for the expected behavior of a web spider for every link
+    in the Obstacle Course.
+  * Provides an Obstacle Course containing:
+    * Empty links.
+    * Circular links.
+    * Links with relative-paths.
+    * Links with absolute-paths.
+    * Remote links.
+    * <tt>javascript:</tt> links.
+    * Links within +frameset+ and +iframe+ tags.
+    * HTTP 300, 301, 302, 303 and 307 Redirects.
 
