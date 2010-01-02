@@ -29,6 +29,7 @@ views/course_start.erb
 views/course_relative_start.erb
 views/course_absolute_start.erb
 views/course_empty_start.erb
+views/course_javascript_start.erb
 views/course_frames_start.erb
 views/course_frames_frame.erb
 views/course_frames_iframe.erb
