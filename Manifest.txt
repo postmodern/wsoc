@@ -7,8 +7,6 @@ config.ru
 bin/wsoc_server
 lib/wsoc.rb
 lib/wsoc/config.rb
-lib/wsoc/extensions.rb
-lib/wsoc/extensions/uri.rb
 lib/wsoc/specs.rb
 lib/wsoc/course_specs.rb
 lib/wsoc/helpers.rb
