@@ -36,6 +36,9 @@ module WSOC
       # @return [String]
       #   The rendered partial.
       #
+      # @example
+      #   partial :course_include
+      #
       # @since 0.1.0
       #
       def partial(page,options={})
@@ -54,6 +57,9 @@ module WSOC
       # @return [String]
       #   The rendered page.
       #
+      # @example
+      #   show :course_fail
+      #
       # @since 0.1.0
       #
       def show(page,options={})
@@ -68,6 +74,9 @@ module WSOC
       #
       # @return [String]
       #   The JSON encoded object.
+      #
+      # @example
+      #   json @specs
       #
       # @since 0.1.0
       #
@@ -86,6 +95,9 @@ module WSOC
       #
       # @return [String]
       #   The YAML encoded object.
+      #
+      # @example
+      #   yaml @specs
       #
       # @since 0.1.0
       #
