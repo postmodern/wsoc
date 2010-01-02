@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
+require './tasks/yard.rb'
 
 Hoe.spec('wsoc') do
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
@@ -15,6 +16,12 @@ Hoe.spec('wsoc') do
     ['json', '>=1.2.0'],
     ['sinatra', '>=0.9.4']
   ]
+
+  self.extra_dev_deps = [
+    ['yard', '>=0.5.2']
+  ]
+
+  self.spec_extras = {:has_rdoc => 'yard'}
 end
 
 # vim: syntax=ruby
