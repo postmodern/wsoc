@@ -81,10 +81,10 @@ module WSOC
     course_template '/course/remote/start.html'
     course_pass '/course/remote/next.html'
 
-    course_template '/course/redirect/start.html'
+    course_template '/course/redirects/start.html'
 
-    get '/course/redirect/300.html' do
-      redirect remote_url('/course/redirect/300/pass.html')
+    get '/course/redirects/300.html' do
+      redirect remote_url('/course/redirects/300/pass.html')
     end
 
     course_pass '/course/redirects/300/pass.html'
