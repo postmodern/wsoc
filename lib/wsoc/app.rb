@@ -127,12 +127,10 @@ module WSOC
 
     course_pass '/course/cookies/protected/1.html'
 
-    course_template '/course/auth/start.html'
-
-    get '/course/auth/protected.html' do
-      protected!
-
-      course_page :course_auth_protected
+    get '/course/auth/start.html' do
+      protected! do
+        course_page :course_auth_start
+      end
     end
 
     course_pass '/course/auth/protected.html'
