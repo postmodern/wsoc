@@ -120,5 +120,11 @@ module WSOC
                  'should visit the 307 HTTP redirect test page'
     should_visit '/course/redirects/307/pass.html',
                  'should follow HTTP 307 redirects'
+
+    # HTTP Auth
+    should_visit '/course/auth/start.html',
+                 'should visit the HTTP Auth start page'
+    should_visit '/course/auth/protected.html',
+                 'should visit the HTTP Auth protected page'
   end
 end
