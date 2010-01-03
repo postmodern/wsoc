@@ -25,23 +25,39 @@ module WSOC
       #
       # Protects an action by requiring HTTP Basic Access Authentication.
       #
+      # @yield []
+      #   If a block is given, it will be called if the client is
+      #   authenticated.
+      #
       # @since 0.1.1
       #
-      def protected!
-        response['WWW-Authenticate'] = %(Basic realm="HTTP Auth Test") and \
-          throw(:halt, [401, "Not authorized\n"]) and \
-          return unless authorized?
+      def protected!(&block)
+        if authorized?
+          block.call() if block
+        else
+          response['WWW-Authenticate'] = %(Basic realm="HTTP Auth Test")
+          throw :halt, [401, "Not authorized\n"]
+        end
       end
 
       # 
       # Checks to see if the requesting user is authorized.
       #
+      # @return [Boolean]
+      #   Specifies whether or not the client is authenticated.
+      #
       # @since 0.1.1
       #
       def authorized?
         @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-        @auth.provided? && @auth.basic? && @auth.credentials && \
-          @auth.credentials == [WSOC::Config::COURSE_AUTH_USER, WSOC::Config::COURSE_AUTH_PASSWORD]
+
+        @auth.provided? && \
+        @auth.basic? && \
+        @auth.credentials && \
+        @auth.credentials == [
+          WSOC::Config::COURSE_AUTH_USER,
+          WSOC::Config::COURSE_AUTH_PASSWORD
+        ]
       end
     end
   end
