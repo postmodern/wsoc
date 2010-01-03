@@ -18,19 +18,30 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'wsoc/helpers/authentication'
-require 'wsoc/helpers/rendering'
-require 'wsoc/helpers/course'
-
-require 'rack'
-
 module WSOC
   module Helpers
-    include Rack::Utils
-    alias :h :escape_html
+    module Authentication
 
-    include Authentication
-    include Rendering
-    include Course
+      #
+      # Protects an action by requiring HTTP Basic Access Authentication.
+      #
+      # @since 0.1.1
+      #
+      def protected!
+        response['WWW-Authenticate'] = %(Basic realm="Testing HTTP Auth") and \
+        throw(:halt, [401, "Not authorized\n"]) and \
+        return unless authorized?
+      end
+
+      # 
+      # Checks to see if the requesting user is authorized.
+      #
+      # @since 0.1.1
+      #
+      def authorized?
+        @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+        @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ['admin', 'password']
+      end
+    end
   end
 end

@@ -127,9 +127,15 @@ module WSOC
 
     course_pass '/course/cookies/protected/1.html'
 
+    course_template '/course/auth/start.html'
+
+    get '/course/auth/protected.html' do
+      protected!
+      course_page :course_auth_protected
+    end
+
     get '/*' do
       redirect remote_url('/course/fail')
     end
-
   end
 end
