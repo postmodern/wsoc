@@ -22,28 +22,43 @@ module WSOC
   module Specs
     def self.included(base)
       base.module_eval do
+        def self.hash
+          @@specs_hash ||= {}
+        end
+
         def self.specs
-          @@specs ||= []
+          self.hash[:specs] ||= []
+        end
+
+        def self.metadata
+          self.hash[:metadata] ||= {}
         end
 
         def self.should(behavior,options)
           self.specs << {:behavior => behavior}.merge(options)
         end
 
-        def self.specs_for(host,port=nil)
+        def self.map(host,port=nil)
           prefix = "http://#{host}"
           prefix << ":#{port}" if (port && port != 80)
 
-          self.specs.map do |spec|
-            unless spec[:url] =~ /^[a-zA-Z0-9]+:/
-              spec.merge(:url => prefix + spec[:url])
-            else
-              spec
-            end
-          end
+          return {
+            :metadata => self.metadata,
+            :specs => self.specs.map { |spec|
+              unless spec[:url] =~ /^[a-zA-Z0-9]+:/
+                spec.merge(:url => prefix + spec[:url])
+              else
+                spec
+              end
+            }
+          }
         end
 
         protected
+
+        def self.config(name,value)
+          self.metadata[name.to_sym] = value
+        end
 
         def self.should_visit(url,message=nil)
           self.should(:visit,:url => url, :message => message)

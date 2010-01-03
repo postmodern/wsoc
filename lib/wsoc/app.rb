@@ -37,7 +37,7 @@ module WSOC
     end
 
     get '/specs' do
-      @specs = specs
+      @specs = specs[:specs]
 
       show :specs
     end

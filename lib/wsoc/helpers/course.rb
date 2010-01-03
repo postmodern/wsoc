@@ -141,7 +141,7 @@ module WSOC
       # @since 0.1.0
       #
       def specs
-        CourseSpecs.specs_for(request.host,request.port)
+        CourseSpecs.map(request.host,request.port)
       end
     end
   end
