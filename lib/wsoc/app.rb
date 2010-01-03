@@ -125,18 +125,6 @@ module WSOC
       course_page :course_cookies_get
     end
 
-    get '/course/cookies/post.html' do
-      response.set_cookie 'auth_level', '2'
-
-      course_page :course_cookies_post
-    end
-
-    post '/course/cookies/post.html' do
-      @authed = (request.cookies['auth_level'] == '2')
-
-      course_page :course_cookies_post
-    end
-
     course_pass '/course/cookies/protected/1.html'
 
     get '/*' do
