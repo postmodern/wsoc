@@ -42,5 +42,9 @@ module WSOC
 
     # Path to the course failure page
     COURSE_FAIL_PATH = "#{COURSE_DIR}/fail"
+
+    # HTTP Basic Auth credential data
+    COURSE_AUTH_USER = 'admin'
+    COURSE_AUTH_PASSWORD = 'password'
   end
 end
