@@ -11,6 +11,7 @@ lib/wsoc/specs.rb
 lib/wsoc/course_specs.rb
 lib/wsoc/helpers.rb
 lib/wsoc/helpers/rendering.rb
+lib/wsoc/helpers/authentication.rb
 lib/wsoc/helpers/course.rb
 lib/wsoc/course.rb
 lib/wsoc/app.rb
@@ -39,4 +40,5 @@ views/course_remote_next.erb
 views/course_cookies_start.erb
 views/course_cookies_get.erb
 views/course_redirects_start.erb
+views/course_auth_start.erb
 views/welcome.erb
