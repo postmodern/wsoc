@@ -19,6 +19,7 @@
 #
 
 require 'wsoc/specs'
+require 'wsoc/config'
 
 module WSOC
   module CourseSpecs
@@ -120,6 +121,9 @@ module WSOC
                  'should visit the 307 HTTP redirect test page'
     should_visit '/course/redirects/307/pass.html',
                  'should follow HTTP 307 redirects'
+
+    config :auth_user, Config::COURSE_AUTH_USER
+    config :auth_password, Config::COURSE_AUTH_PASSWORD
 
     # HTTP Auth
     should_visit '/course/auth/start.html',
