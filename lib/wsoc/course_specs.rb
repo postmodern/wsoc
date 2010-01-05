@@ -87,7 +87,7 @@ module WSOC
                  'should visit normal remote links'
     should_fail 'http://spidr.rubyforge.org:1337/course/remote/fail.html',
                 'should safely fail on closed ports'
-    should_fail 'http://0.0.0.0/course/remote/fail.html',
+    should_fail 'http://191.255.0.0/course/remote/fail.html',
                 'should safely fail on unreachable IP Addresses'
     should_fail 'http://bad.tld/course/remote/fail.html',
                 'should safely fail on host-names with invalid TLDs'
