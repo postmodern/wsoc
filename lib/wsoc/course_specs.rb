@@ -126,8 +126,12 @@ module WSOC
     should_visit '/course/redirects/307/pass.html',
                  'should follow HTTP 307 redirects'
 
-    config :auth_user, Config::COURSE_AUTH_USER
-    config :auth_password, Config::COURSE_AUTH_PASSWORD
+    config :auth_store, {
+      '/course/auth/' => {
+        :user, Config::COURSE_AUTH_USER,
+        :password, Config::COURSE_AUTH_PASSWORD
+      }
+    }
 
     # HTTP Auth
     should_visit '/course/auth/start.html',
