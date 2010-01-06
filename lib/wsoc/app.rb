@@ -133,7 +133,11 @@ module WSOC
       end
     end
 
-    course_pass '/course/auth/protected.html'
+    get '/course/auth/protected.html' do
+      protected! do
+        course_page :course_pass
+      end
+    end
 
     get '/*' do
       redirect remote_url('/course/fail')
