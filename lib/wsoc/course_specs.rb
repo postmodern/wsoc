@@ -99,7 +99,7 @@ module WSOC
                  'should visit the cookies start page'
     should_visit '/course/cookies/get.html',
                  'should visit the cookies GET request test page'
-    should_visit '/course/cookies/protected/1.html',
+    should_visit '/course/cookies/protected.html',
                  'should visit the first cookie protected page'
 
     # HTTP Redirects

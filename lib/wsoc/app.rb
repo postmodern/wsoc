@@ -125,7 +125,7 @@ module WSOC
       course_page :course_cookies_get
     end
 
-    course_pass '/course/cookies/protected/1.html'
+    course_pass '/course/cookies/protected.html'
 
     get '/course/auth/start.html' do
       protected! do
