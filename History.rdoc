@@ -6,8 +6,8 @@
 * Added a failing link to <tt>/course/remote/start.html</tt> with a bad TLD.
 * Added a failing link to <tt>/course/remote/start.html</tt> with the bad
   IP address +191.255.0.0+.
-* Added <tt>/course/auth</tt> for testing spidering of HTTP basic
-  auth protected pages.
+* Added <tt>/course/auth</tt> for testing spidering of HTTP Basic
+  Auth protected pages.
   * Added auth store information to the metadata within the specs.
 
 === 0.1.0 / 2010-01-02
