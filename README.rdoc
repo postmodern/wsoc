@@ -22,7 +22,9 @@ the thoroughness and resilience of Web Spiders.
   * Remote links.
   * <tt>javascript:</tt> links.
   * Links within +frameset+ and +iframe+ tags.
+  * Cookie protected pages.
   * HTTP 300, 301, 302, 303 and 307 Redirects.
+  * HTTP Baisc Auth protected pages.
 
 == SYNOPSIS:
 
