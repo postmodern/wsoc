@@ -12,16 +12,16 @@ Hoe.spec('wsoc') do
   self.history_file = 'History.rdoc'
   self.remote_rdoc_dir = '/'
 
-  self.extra_deps = [
+  self.extra_deps += [
     ['json', '>=1.2.0'],
     ['sinatra', '>=0.9.4']
   ]
 
-  self.extra_dev_deps = [
+  self.extra_dev_deps += [
     ['yard', '>=0.5.2']
   ]
 
-  self.spec_extras = {:has_rdoc => 'yard'}
+  self.spec_extras.merge!(:has_rdoc => 'yard')
 end
 
 # vim: syntax=ruby
