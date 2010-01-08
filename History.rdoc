@@ -2,7 +2,7 @@
 
 * Added WSOC::Specs.metadata.
 * Added WSOC::Specs.config.
-* Added WSOC::Helpers::Authentication.
+* Added {WSOC::Helpers::Authentication}.
 * Added a failing link to <tt>/course/remote/start.html</tt> with a bad TLD.
 * Added a failing link to <tt>/course/remote/start.html</tt> with the bad
   IP address +191.255.0.0+.
