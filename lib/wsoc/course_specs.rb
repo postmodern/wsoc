@@ -128,8 +128,8 @@ module WSOC
 
     config :auth_store, {
       '/course/auth/' => {
-        :user, Config::COURSE_AUTH_USER,
-        :password, Config::COURSE_AUTH_PASSWORD
+        :user => Config::COURSE_AUTH_USER,
+        :password => Config::COURSE_AUTH_PASSWORD
       }
     }
 
