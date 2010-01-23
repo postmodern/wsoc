@@ -9,7 +9,7 @@ Hoe.plugin :yard
 Hoe.spec('wsoc') do
   self.developer('Postmodern', 'postmodern.mod3@gmail.com')
 
-  self.yard_opts += ['--protected']
+  self.yard_options += ['--protected']
   self.remote_yard_dir = '/'
 
   self.extra_deps += [
