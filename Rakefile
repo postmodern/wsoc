@@ -16,6 +16,10 @@ Hoe.spec('wsoc') do
     ['json', '>=1.2.0'],
     ['sinatra', '>=0.9.4']
   ]
+
+  self.extra_dev_deps += [
+    ['yard', '>=0.5.3']
+  ]
 end
 
 # vim: syntax=ruby
