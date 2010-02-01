@@ -1,7 +1,7 @@
 # Web Spider Obstacle Course (WSOC)
 
-* [github.com/postmodern/wsoc](http://github.com/postmodern/wsoc/)
-* [github.com/postmodern/wsoc/issues](http://github.com/postmodern/wsoc/issues)
+* http://github.com/postmodern/wsoc/
+* http://github.com/postmodern/wsoc/issues
 * Postmodern (postmodern.mod3 at gmail.com)
 
 ## DESCRIPTION:
