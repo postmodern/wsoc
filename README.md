@@ -1,15 +1,15 @@
-= Web Spider Obstacle Course (WSOC)
+# Web Spider Obstacle Course (WSOC)
 
-* http://github.com/postmodern/wsoc
-* http://github.com/postmodern/wsoc/issues
+* [github.com/postmodern/wsoc](http://github.com/postmodern/wsoc/)
+* [github.com/postmodern/wsoc/issues](http://github.com/postmodern/wsoc/issues)
 * Postmodern (postmodern.mod3 at gmail.com)
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 The Web Spider Obstacle Course (WSOC) is an example web server that tests
 the thoroughness and resilience of Web Spiders.
 
-== FEATURES:
+## FEATURES:
 
 * Written as a Sinatra application.
 * Provides Specs for the expected behavior of a web spider for every link in
@@ -26,20 +26,20 @@ the thoroughness and resilience of Web Spiders.
   * HTTP 300, 301, 302, 303 and 307 Redirects.
   * HTTP Baisc Auth protected pages.
 
-== SYNOPSIS:
+## SYNOPSIS:
 
-  $ wsoc_server -p 8080
+    $ wsoc_server -p 8080
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
-* {sinatra}[http://sinatrarb.com] >= 0.9.4
-* {json}[http://json.rubyforge.org] >= 1.2.0
+* [sinatra](http://sinatrarb.com) >= 0.9.4
+* [json](http://json.rubyforge.org) >= 1.2.0
 
-== INSTALL:
+## INSTALL:
 
   $ sudo gem install wsoc
 
-== LICENSE:
+## LICENSE:
 
 WSOC - The Web Spider Obstacle Course
 

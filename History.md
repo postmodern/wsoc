@@ -1,20 +1,20 @@
-=== 0.1.2 / 2010-01-10
+### 0.1.2 / 2010-01-10
 
 * Emergency fix for a typo that only effected Ruby 1.9.1.
 
-=== 0.1.1 / 2010-01-06
+### 0.1.1 / 2010-01-06
 
 * Added WSOC::Specs.metadata.
 * Added WSOC::Specs.config.
 * Added {WSOC::Helpers::Authentication}.
-* Added a failing link to <tt>/course/remote/start.html</tt> with a bad TLD.
-* Added a failing link to <tt>/course/remote/start.html</tt> with the bad
+* Added a failing link to `/course/remote/start.html` with a bad TLD.
+* Added a failing link to `/course/remote/start.html` with the bad
   IP address +191.255.0.0+.
-* Added <tt>/course/auth</tt> for testing spidering of HTTP Basic
+* Added `/course/auth` for testing spidering of HTTP Basic
   Auth protected pages.
   * Added auth store information to the metadata within the specs.
 
-=== 0.1.0 / 2010-01-02
+### 0.1.0 / 2010-01-02
 
 * Initial release:
   * Written as a Sinatra application.
@@ -26,7 +26,7 @@
     * Links with relative-paths.
     * Links with absolute-paths.
     * Remote links.
-    * <tt>javascript:</tt> links.
+    * `javascript:` links.
     * Links within +frameset+ and +iframe+ tags.
     * HTTP 300, 301, 302, 303 and 307 Redirects.
 
