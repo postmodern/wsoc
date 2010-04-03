@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-02-11}
+  s.date = %q{2010-04-02}
   s.default_executable = %q{wsoc_server}
   s.description = %q{The Web Spider Obstacle Course (WSOC) is an example web server that tests the thoroughness and resilience of Web Spiders.}
   s.email = %q{postmodern.mod3@gmail.com}
@@ -62,13 +62,15 @@ Gem::Specification.new do |s|
     "views/course_start.erb",
     "views/layout.erb",
     "views/specs.erb",
-    "views/welcome.erb"
+    "views/welcome.erb",
+    "wsoc.gemspec"
   ]
   s.has_rdoc = %q{yard}
   s.homepage = %q{http://github.com/postmodern/wsoc}
+  s.licenses = ["GPL-2"]
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{An example web server that tests the thoroughness and resilience of Web Spiders}
 
   if s.respond_to? :specification_version then

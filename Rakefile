@@ -7,6 +7,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = 'wsoc'
     gem.version = WSOC::VERSION
+    gem.license = 'GPL-2'
     gem.summary = %Q{An example web server that tests the thoroughness and resilience of Web Spiders}
     gem.description = %Q{The Web Spider Obstacle Course (WSOC) is an example web server that tests the thoroughness and resilience of Web Spiders.}
     gem.email = 'postmodern.mod3@gmail.com'
