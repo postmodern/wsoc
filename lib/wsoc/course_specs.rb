@@ -125,6 +125,10 @@ module WSOC
                  'should visit the 307 HTTP redirect test page'
     should_visit '/course/redirects/307/pass.html',
                  'should follow HTTP 307 redirects'
+    should_visit '/course/redirects/meta.html',
+                 'should visit the meta refresh redirect test page'
+    should_visit '/course/redirects/meta/pass.html',
+                 'should follow meta refresh (soft) redirects'
 
     config :auth_store, {
       '/course/auth/' => {

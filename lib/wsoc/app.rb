@@ -112,6 +112,12 @@ module WSOC
 
     course_pass '/course/redirects/307/pass.html'
 
+    get '/course/redirects/meta.html' do
+      course_page :course_redirects_meta
+    end
+
+    course_pass '/course/redirects/meta/pass.html'
+
     get '/course/cookies/start.html' do
       response.set_cookie 'auth_level', '1'
 
