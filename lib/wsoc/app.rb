@@ -25,7 +25,6 @@ require 'wsoc/version'
 
 require 'rubygems'
 require 'sinatra'
-require 'nokogiri'
 
 module WSOC
   class App < Sinatra::Base
