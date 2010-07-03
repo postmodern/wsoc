@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-04-02}
+  s.date = %q{2010-07-02}
   s.default_executable = %q{wsoc_server}
   s.description = %q{The Web Spider Obstacle Course (WSOC) is an example web server that tests the thoroughness and resilience of Web Spiders.}
   s.email = %q{postmodern.mod3@gmail.com}
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     ".yardopts",
     "COPYING.txt",
     "ChangeLog.md",
+    "Gemfile",
     "README.md",
     "Rakefile",
     "bin/wsoc_server",
@@ -55,6 +56,7 @@ Gem::Specification.new do |s|
     "views/course_loop_next.erb",
     "views/course_loop_start.erb",
     "views/course_pass.erb",
+    "views/course_redirects_meta.erb",
     "views/course_redirects_start.erb",
     "views/course_relative_start.erb",
     "views/course_remote_next.erb",
@@ -68,28 +70,30 @@ Gem::Specification.new do |s|
   s.has_rdoc = %q{yard}
   s.homepage = %q{http://github.com/postmodern/wsoc}
   s.licenses = ["GPL-2"]
-  s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{An example web server that tests the thoroughness and resilience of Web Spiders}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<json>, [">= 1.2.0"])
-      s.add_runtime_dependency(%q<sinatra>, [">= 0.9.4"])
-      s.add_development_dependency(%q<yard>, [">= 0.5.3"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<json_pure>, ["~> 1.4.0"])
+      s.add_runtime_dependency(%q<sinatra>, ["~> 1.0"])
+      s.add_development_dependency(%q<rake>, ["~> 0.8.7"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.4.0"])
     else
-      s.add_dependency(%q<json>, [">= 1.2.0"])
-      s.add_dependency(%q<sinatra>, [">= 0.9.4"])
-      s.add_dependency(%q<yard>, [">= 0.5.3"])
+      s.add_dependency(%q<json_pure>, ["~> 1.4.0"])
+      s.add_dependency(%q<sinatra>, ["~> 1.0"])
+      s.add_dependency(%q<rake>, ["~> 0.8.7"])
+      s.add_dependency(%q<jeweler>, ["~> 1.4.0"])
     end
   else
-    s.add_dependency(%q<json>, [">= 1.2.0"])
-    s.add_dependency(%q<sinatra>, [">= 0.9.4"])
-    s.add_dependency(%q<yard>, [">= 0.5.3"])
+    s.add_dependency(%q<json_pure>, ["~> 1.4.0"])
+    s.add_dependency(%q<sinatra>, ["~> 1.0"])
+    s.add_dependency(%q<rake>, ["~> 0.8.7"])
+    s.add_dependency(%q<jeweler>, ["~> 1.4.0"])
   end
 end
 
