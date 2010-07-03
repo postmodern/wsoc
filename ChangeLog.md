@@ -1,3 +1,13 @@
+### 0.1.3 / 2010-07-02
+
+* Migrated off of Hoe and to Jeweler.
+* Manage all development dependencies with Bundler.
+* Removed the dependencey on nokogiri.
+* Upgraded from json to json_pure ~> 1.4.0.
+* Upgraded to sinatra ~> 1.0.
+* Switched to markdown formatted YARD documentation.
+* Added a meta-refresh/redirect obstacle to the course (thanks zapnap).
+
 ### 0.1.2 / 2010-01-10
 
 * Emergency fix for a typo that only effected Ruby 1.9.1.
