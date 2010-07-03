@@ -24,6 +24,7 @@ the thoroughness and resilience of Web Spiders.
   * Links within +frameset+ and +iframe+ tags.
   * Cookie protected pages.
   * HTTP 300, 301, 302, 303 and 307 Redirects.
+  * Meta-Refresh Redirects.
   * HTTP Baisc Auth protected pages.
 
 ## Synopsis
