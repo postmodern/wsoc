@@ -34,7 +34,7 @@ the thoroughness and resilience of Web Spiders.
 ## Requirements
 
 * [sinatra](http://sinatrarb.com) >= 0.9.4
-* [json](http://json.rubyforge.org) >= 1.2.0
+* [json_pure](http://flori.github.com/json/) >= 1.4.0
 
 ## Install
 
