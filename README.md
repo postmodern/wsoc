@@ -34,7 +34,7 @@ the thoroughness and resilience of Web Spiders.
 ## Requirements
 
 * [json_pure](http://flori.github.com/json/) ~> 1.4.0
-* [sinatra](http://sinatrarb.com) >= 0.9.4
+* [sinatra](http://sinatrarb.com) ~> 1.0
 
 ## Install
 

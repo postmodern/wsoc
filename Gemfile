@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 group(:runtime) do
   gem 'json_pure',	'~> 1.4.0'
-  gem 'sinatra',	'>= 0.9.4'
+  gem 'sinatra',	'~> 1.0'
 end
 
 group(:development) do
