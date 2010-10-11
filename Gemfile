@@ -7,7 +7,7 @@ end
 
 group(:development) do
   gem 'rake',			'~> 0.8.7'
-  gem 'jeweler',		'~> 1.4.0', :git => 'git://github.com/technicalpickles/jeweler.git'
+  gem 'jeweler',		'~> 1.5.0.pre'
 end
 
 group(:doc) do

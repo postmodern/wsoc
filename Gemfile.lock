@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    git (1.2.5)
+    jeweler (1.5.0.pre3)
+      bundler (~> 1.0.0)
+      git (>= 1.2.5)
+      rake
+    json_pure (1.4.6)
+    rack (1.2.1)
+    rake (0.8.7)
+    rdiscount (1.6.5)
+    sinatra (1.0)
+      rack (>= 1.0)
+    yard (0.5.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jeweler (~> 1.5.0.pre)
+  json_pure (~> 1.4.0)
+  rake (~> 0.8.7)
+  rdiscount (~> 1.6.3)
+  sinatra (~> 1.0)
+  yard (~> 0.5.3)
