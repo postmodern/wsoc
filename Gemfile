@@ -1,22 +1,18 @@
 source 'https://rubygems.org'
 
-group(:runtime) do
-  gem 'json_pure',	'~> 1.4.0'
-  gem 'sinatra',	'~> 1.0'
-end
+gemspec
 
-group(:development) do
-  gem 'rake',			'~> 0.8.7'
-  gem 'jeweler',		'~> 1.5.0.pre'
-end
+group :development do
+  gem 'rake',			    '~> 0.8.7'
 
-group(:doc) do
   case RUBY_PLATFORM
   when 'java'
-    gem 'maruku',	'~> 0.6.0'
+    gem 'maruku',	    '~> 0.6.0'
   else
     gem 'rdiscount',	'~> 1.6.3'
   end
 
-  gem 'yard',		'~> 0.6.0'
+  gem 'ore-core',     '~> 0.1.0'
+  gem 'ore-tasks',    '~> 0.3.0'
+  gem 'yard',		      '~> 0.6.0'
 end
