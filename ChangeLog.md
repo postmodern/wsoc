@@ -1,3 +1,8 @@
+### 0.1.4 / 2011-12-08
+
+* Require json ~> 1.4
+* Require sinatra ~> 1.0
+
 ### 0.1.3 / 2010-07-02
 
 * Migrated off of Hoe and to Jeweler.
