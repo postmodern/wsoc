@@ -28,7 +28,7 @@ module WSOC
         set :port, Config::DEFAULT_PORT
 
         set :root, File.expand_path(File.join(File.dirname(__FILE__),'..','..'))
-        set :course, File.join(self.public,'course')
+        set :course, File.join(self.root,'course')
         enable :static, :sessions
 
         helpers WSOC::Helpers
