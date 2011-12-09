@@ -14,9 +14,9 @@ homepage: http://github.com/postmodern/wsoc
 has_yard: true
 
 dependencies:
-  json_pure: ~> 1.4.0
-  sinatra: ~> 1.0.0
+  json: ~> 1.4
+  sinatra: ~> 1.0
 
 development_dependencies:
-  bundler: ~> 1.0.0
-  yard: ~> 0.6.0
+  bundler: ~> 1.0
+  yard: ~> 0.7
