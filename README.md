@@ -1,8 +1,8 @@
 # Web Spider Obstacle Course (WSOC)
 
-* [github.com/postmodern/wsoc](http://github.com/postmodern/wsoc/)
-* [github.com/postmodern/wsoc/issues](http://github.com/postmodern/wsoc/issues)
-* Postmodern (postmodern.mod3 at gmail.com)
+* [Source](https://github.com/postmodern/wsoc/)
+* [Issues](https://github.com/postmodern/wsoc/issues)
+* [Email](mailto:postmodern.mod3 at gmail.com)
 
 ## Description
 
@@ -33,18 +33,18 @@ the thoroughness and resilience of Web Spiders.
 
 ## Requirements
 
-* [json_pure](http://flori.github.com/json/) ~> 1.4.0
+* [json](http://flori.github.com/json/) ~> 1.4
 * [sinatra](http://sinatrarb.com) ~> 1.0
 
 ## Install
 
-    $ sudo gem install wsoc
+    $ gem install wsoc
 
 ## License
 
 WSOC - The Web Spider Obstacle Course
 
-Copyright (c) 2009-2010 Hal Brodigan (postmodern.mod3 at gmail.com)
+Copyright (c) 2009-2011 Hal Brodigan (postmodern.mod3 at gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
