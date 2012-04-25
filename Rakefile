@@ -18,8 +18,8 @@ end
 
 require 'rake'
 
-require 'ore/tasks'
-Ore::Tasks.new
+require 'rubygems/tasks'
+Gem::Tasks.new
 
 require 'yard'
 YARD::Rake::YardocTask.new
